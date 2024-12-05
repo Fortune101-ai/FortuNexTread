@@ -1,7 +1,7 @@
 
 
 :root {
-    --primary-color: yellow;
+    --primary-color: gold;
     --text-dark: black;
     --text-light: #737373;
     --extra-light: #f4f6f6;
@@ -202,10 +202,139 @@ header{
     margin-inline: auto;
 }
 
+.arrival_container .section_header {
+    margin-bottom: 4rem;
+    max-width: fit-content;
+}
+
+.arrival_container .section_header::before{
+    content: "";
+}
+
+.arrival_grid {
+    display:grid;
+    gap: 2rem;
+}
+
+.arrival_card{
+    max-width:400px;
+    margin-inline:auto;
+
+}
+
+.arrival_image {
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.arrival_image img {
+    transition: 0.3s;
+}
+
+.arrival_card:hover .arrival_image img {
+    transform: scale(1.1);
+}
+
+.arrival_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:1rem;
+}
+.arrival_content h4{
+    font-size:1.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+
+}
+
+.arrival_content a{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.arrival_content a:hover {
+    color: var(--primary-color);
+}
+
+.arrival_content span {
+    font-size: 1.5rem;
+    color:var(--text-light);
+}
+
+.sale {
+    background-color: var(--primary-color);
+}
+
+.sale_container{
+    padding-block:1rem 0;
+    display:grid;
+    gap:2rem;
+    overflow:hidden;
+
+}
+
+.sale_image img {
+    max-width:500px;
+    margin-inline: auto;
+    filter:drop-shadow(20px 20px 15px rgba(0,0,0,0.5))
+}
+
+.sale_content{
+   padding-bottom: 4rem; 
+}
+
+.sale_content h2{
+    margin-bottom: 1rem;
+    font-size: 5rem;
+    font-weight: 800;
+    line-height:5.75rem;
+}
+
+.sale_content h2 span{
+    position: relative;
+    isolation: isolate;
+}
+
+.sale_content h2 span::before{
+    position: absolute;
+    content:"";
+    top:0;
+    left:-1rem;
+    height:calc(100% - 10px);
+    width: calc(100% + 4rem);
+    background-color: white;
+    transform: rotate(-2deg);
+    z-index: -1;
+}
+
+.sale_content p{
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.sale_content h4{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.sale_btn .btn:hover{
+    color:var(--text-dark);
+    background-color: white;
+}
+
 @media (width > 540px) {
     .header_content h1 {
         font-size: 5rem;
         line-height: 6.5rem;
+    }
+
+    .arrival_grid{
+        grid-template-columns: repeat(2,1fr);
     }
 }
 @media (width > 768px){
@@ -280,4 +409,17 @@ header{
         top: 2rem;
         z-index: -1;
     }
+    .arrival_grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .sale_container{
+        grid-template-columns: repeat(2,1fr);
+        align-items: center;
+    }
+
+    .sale_content {
+        padding-block: 4rem;
+    }
+
 }
