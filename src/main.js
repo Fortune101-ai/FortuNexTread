@@ -55,5 +55,8 @@ scrollRevealOptions().reveal(".sale_btn", {
     ...scrollRevealOptions, delay: 1500
 })
 
+scrollRevealOptions().reveal(".favourite_card", {
+    ...scrollRevealOptions, interval: 500
+})
 
 
