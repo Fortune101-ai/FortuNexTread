@@ -100,7 +100,7 @@ nav {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 9;
+    z-index: 10;
     background-color: var(--primary-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -121,38 +121,23 @@ nav {
 }
 
 .nav_menu_btn {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: white;
     cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.nav_menu_btn:hover {
-    color: var(--secondary-color);
+    display: none;
 }
 
 .nav_links {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--primary-color);
-    transition: transform 0.5s ease-in-out;
-    transform: translateY(-100%);
-    z-index: -1;
-}
-
-.nav_links.open {
-    transform: translateY(0);
+    flex-direction: row;
+    margin-left: auto; 
 }
 
 .nav_links a {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: white;
     text-transform: capitalize;
@@ -162,6 +147,7 @@ nav {
 .nav_links a:hover {
     color: var(--secondary-color);
 }
+
 
 header {
     margin-top: 5rem;
@@ -476,3 +462,55 @@ footer {
     text-decoration: underline;
 }
 
+
+@media (min-width: 768px) {
+    .nav_menu_btn {
+        display: none;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .nav_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav_logo a {
+        font-size: 1.8rem;
+        color: white;
+    }
+
+    .nav_menu_btn {
+        display: block;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--primary-color);
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: -1;
+        padding-top: 4rem;
+    }
+
+    .nav_links.open {
+        transform: translateY(0);
+        z-index: 1;
+    }
+}
